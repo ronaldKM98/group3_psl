@@ -3,7 +3,8 @@ app:
     image: psl-devops/poc-cd
     dockerfile: codeship/Dockerfile
   cached: true
-  - ./:/app
+  volumes:
+    - ./:/app
 
 awsdeployment:
   image: codeship/aws-deployment
