@@ -16,4 +16,4 @@
 #  command: mvn -B -s settings.xml heroku:deploy -DskipTests -Pci
 
 - service: awsdeployment
-  command: aws s3 cp /deploy/poc-cd-1.0.jar s3://aws-terraform-workshop
+  command: aws s3 cp /deploy/target/poc-cd-1.0.jar s3://aws-terraform-workshop
