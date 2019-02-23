@@ -3,3 +3,12 @@ app:
     image: psl-devops/poc-cd
     dockerfile: codeship/Dockerfile
   cached: true
+  - ./:/app
+
+awsdeployment:
+  image: codeship/aws-deployment
+  encrypted_env_file: aws.env.encrypted
+  environment:
+    - AWS_DEFAULT_REGION=us-east-1
+  volumes:
+    - ./:/deploy

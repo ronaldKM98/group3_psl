@@ -10,7 +10,10 @@
   service: app
   command: mvn -B package -DskipTests -Pci
 
-- name: Deploy
-  tag: master
-  service: app
-  command: mvn -B -s settings.xml heroku:deploy -DskipTests -Pci
+#- name: Deploy
+#  tag: master
+#  service: app
+#  command: mvn -B -s settings.xml heroku:deploy -DskipTests -Pci
+
+- service: awsdeployment
+  command: aws s3 cp /app/target/poc-cd-1.0.jar s3://aws-terraform-workshop
